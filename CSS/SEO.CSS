@@ -1,0 +1,342 @@
+/*? tính làm sạch
+ * sắp xếp lại code theo cấu trúc tài liệu
+ * - đặt thẻ có tính tài liệu như (header, section, article, footer,...) để tạo cấu trúc tài liệu rõ ràng
+ * + đặt tên ID cho các thẻ tài liệu dẽ tìm kiếm và chỉnh sửa
+ * + Ví Dụ: 
+ *   <section id="menu-header">
+ *     <div class="box__container">
+ *       <a href="#" class="link">Hello</a>
+ *     </div>
+ *     <span class="text__welcome">Chào mừng <b class="you">bạn</b>!</span>
+ *   </section>
+ *
+ * tạo cấu trúc tài liệu rõ ràng
+ * - đặt tên ID Class rõ ràng, có ý nghĩa:
+ * - nhóm các phần liên quan lại với nhau
+ * - sử dụng comment để phân biệt các phần khác nhau
+ * - sử dụng quy ước comment để nhận diện được các phần quan trọng
+ * 
+ * hạng chế sử dụng
+ * - sử dụng ID vào style đều này sẽ gay khó khăn cho việc tái sử dụng
+ * - sử dụng Class vào style đều này sẽ dễ dàng cho việc tái sử dụng
+ * - BEM để nhóm các chức năng quan trọng, có ý nghĩa rõ ràng, và có thể tái sử dụng
+ * - sử dụng BEM linh hoạt có kí thiệu
+ * - Ví Dụ:
+ *   {1} nên sử dụng
+ *     <p class="text__welcome">
+ *       <u>Chào mừng</u> bạn đến với trang <strong class="seo">SEO</strong> 
+ *     </p>
+ *   {2} hạng chế sử dụng
+ *     <p class="text__welcome">
+ *       <u class="text__lo">Chào mừng</u> bạn đến với trang <strong class="text__seo">SEO</strong> 
+ *     </p>
+ *   
+ */
+/*? tính bảo trì
+ * comment element nhóm theo thứ tự
+ * - element tài liệu          : /** ----- ----- -----    HOẶC /** (((
+ * - element Class BEM cấp 1   : /** ----- -----          HOẶC /** ((
+ * - element Class BEM cấp 2   : /** -----                HOẶC /** ( 
+ * - element Class đơn         : /** --- 
+ *
+ * comment quy ước: /** =====
+ * - để nhận diện được các phần quan trọng
+ * - để phân biệt được các phần khác nhau
+ * - để phân biệt được các phần có sự thay đổi
+ * - để dễ dàng tìm kiếm và chỉnh sửa
+ *
+ * root code nhanh
+ * - theo ID của tài liệu để sử dụng lại cho các trang khác
+ * + sử dụng :root làm cột trung tâm
+ * + sử dụng tên ID của một tài liệu để là nhóm biến :root
+ * + Ví Dụ:
+ *   #name {
+ *     sử dụng var() để tái sử dụng giá trị
+ *     tên biến quy ước theo tên nhóm:
+ *       --name-variable: value; ←- giá trị gốc
+ *       --name-variable-: value; ←- giá trị biến đổi (nếu có)
+ *       --variable: value; ←- giá trị chung (nếu có)
+ *       --variable-: value; ←- giá trị chung biến đổi (nếu có)
+ *   }
+ *
+ */
+
+
+/* --------------------------
+| Thẻ  | Kích thước mặc định |
+| ---- | ------------------- |
+| `h1` | 2rem (≈ 32px)       |
+| `h2` | 1.5rem (≈ 24px)     |
+| `h3` | 1.17rem (≈ 18.72px) |
+| `h4` | 1rem (≈ 16px)       |
+| `h5` | 0.83rem (≈ 13.28px) |
+| `h6` | 0.67rem (≈ 10.72px) | 
+-------------------------- */
+/* @layer
+  base (thấp nhất)
+  components (trung bình)
+  utilities (cao nhất)
+*/
+/*
+  Mobile: 480px
+  Tablet: 768px
+  Laptop: 1024px
+  Desktop: 1440px
+  TV / 4K: 1920px
+*/
+
+/** ===== CSS trước layer hệ thống ===== */
+body {
+  background: linear-gradient(to right, #0f172a, #020617);
+  color: #fff;
+  min-height: 100vh;
+}
+
+/** ===== root ===== */
+:root {
+
+  /* ===== Primary (màu chính) ===== */
+  --color-primary: #38bdf8;
+  --color-primary-hover: #0ea5e9;
+  --color-primary-soft: rgba(56, 189, 248, 0.15);
+
+  /* ===== Secondary (gradient / accent) ===== */
+  --color-secondary: #a78bfa;
+  --color-secondary-soft: rgba(167, 139, 250, 0.15);
+
+  /* ===== Background ===== */
+  --color-bg-main: #020617;
+  --color-bg-sub: #0f172a;
+  --color-bg-glass: rgba(15, 23, 42, 0.6);
+
+  /* ===== Text ===== */
+  --color-text-main: #ffffff;
+  --color-text-sub: #cbd5f5;
+  --color-text-muted: #64748b;
+
+  /* ===== Border ===== */
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-border-soft: rgba(255, 255, 255, 0.05);
+
+  /* ===== Shadow ===== */
+  --shadow-soft: 0 4px 20px rgba(0,0,0,0.2);
+  --shadow-strong: 0 10px 40px rgba(0,0,0,0.4);
+
+  /* ===== Radius ===== */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+
+  /* ===== Transition ===== */
+  --transition-fast: 0.2s ease;
+  --transition-smooth: 0.3s ease;
+
+  /* ===== Gradient ===== */
+  --gradient-primary: linear-gradient(45deg, #38bdf8, #a78bfa);
+
+}
+
+/** ===== root menu ===== */
+#menu-header {
+
+}
+
+/** ========== base (thấp nhất) ========== */
+@layer base {
+}
+
+/** ========== components (trung bình) ========== */
+@layer components {
+
+/** ----- ----- ----- menu ----- ----- ----- */
+.menu-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(12px);
+  background: var(--color-bg-glass);
+  border-bottom: 1px solid var(--color-border-soft);
+}
+
+/** ----- ----- container ----- ----- */
+.box__container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0.8rem 1.2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo-gradient {
+  font-size: 1.4rem;
+  font-family: sans-serif;
+  font-weight: bold;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: var(--transition-smooth);
+}
+.logo-gradient:hover {
+  opacity: 0.8;
+}
+
+/** ----- desktop-navbar ----- */
+.box__desktop-navbar {
+  display: flex;
+  gap: 1.5rem;
+}
+.box__desktop-navbar a {
+  position: relative;
+  font-weight: bold;
+  font-family: sans-serif;
+  font-size: 0.95rem;
+  color: var(--color-text-sub);
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+.box__desktop-navbar a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: var(--color-primary);
+  transition: var(--transition-smooth);
+}
+.box__desktop-navbar a:hover {
+  color: var(--color-text-main);
+}
+.box__desktop-navbar a:hover::after {
+  width: 100%;
+}
+
+/** ----- menu button (mobile) ----- */
+.menu-button {
+  display: none;
+  font-size: 1.4rem;
+  color: var(--color-text-main);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+/** ----- ----- mobile-navbar ----- ----- */
+.box__mobile-navbar {
+  display: none;
+  flex-direction: column;
+  gap: 1rem;
+
+  padding: 1rem;
+  margin: 0.5rem 1rem;
+
+  border-radius: var(--radius-md);
+  background: var(--color-bg-glass);
+  box-shadow: var(--shadow-strong);
+
+  animation: slideDown 0.3s ease;
+}
+.box__mobile-navbar a {
+  color: var(--color-text-sub);
+  font-weight: bold;
+  font-family: sans-serif;
+  font-size: 0.9rem;
+  text-decoration: none;
+  padding: 0.5rem;
+  border-radius: var(--radius-sm);
+  transition: var(--transition-smooth);
+}
+.box__mobile-navbar a:hover {
+  background: var(--color-border-soft);
+  color: var(--color-text-main);
+}
+
+/** ===== animation ===== */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/** ----- ----- ----- agency ----- ----- ----- */
+.agency-section {
+  padding: 6rem 1.2rem 4rem;
+  text-align: center;
+}
+
+/** ----- ----- container ----- ----- */
+.box__hero-content {
+  max-width: 800px;
+  margin: auto;
+  animation: fadeUp 0.6s ease;
+}
+
+/** ----- hero-title ----- */
+.text__hero-title {
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1.3;
+  color: var(--color-text-main);
+}
+.text__hero-title span {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/** ----- hero-subtitle ----- */
+.text__hero-subtitle {
+  margin-top: 1.2rem;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--color-text-sub);
+}
+.text__hero-subtitle strong {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+.text__hero-subtitle em {
+  color: var(--color-secondary);
+  font-style: normal;
+  font-weight: 500;
+}
+
+/** ===== animation ===== */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+}
+
+/** ========== utilities (cao nhất) ========== */
+@layer utilities {
+
+/* responsive */
+@media (max-width: 768px) {
+  .box__desktop-navbar {
+    display: none;
+  }
+
+  .menu-button {
+    display: block;
+  }
+
+  .box__mobile-navbar {
+    display: flex;
+  }
+}
+
+}

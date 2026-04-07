@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài Đăng SEO</title>
+    <!-- link Thư viện -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- link SEO.css -->
+  <link rel="stylesheet" href="../CSS/SEO.CSS">
+  <style>
+    @layer base {* {margin: 0; padding: 0; box-sizing: border-box;}}
+  </style>
+</head>
+<body>
+
+  <!--* ----- ----- ----- menu ----- ----- ----- -->
+  <header id="menu-header" class="menu-header" x-data="{ open: false }" @scroll.window="open = false">
+    <!--* ----- ----- container ----- ----- -->
+    <div class="box__container">
+      <a href="#" class="logo-gradient">VNmini</a>
+      <!--* ----- desktop-navbar ----- -->
+      <nav class="box__desktop-navbar">
+        <a href="../HTML/SEO.html" class="link-seo">Bài Đăng SEO</a>
+        <a href="../HTML/Logic.html" class="link-logic">Tư Duy</a>
+        <a href="../HTML/Skill.html" class="link-skill">Kỹ Năng</a>
+      </nav>
+      <button @click="open = !open" class="menu-button">
+        <i class="fas" :class="open ? 'fa-times' : 'fa-bars'"></i>
+      </button>
+    </div>
+
+    <!--* ----- ----- mobile-navbar ----- ----- -->
+    <nav x-show="open" 
+        @click.away="open = false"
+        class="box__mobile-navbar">
+      <a href="../HTML/SEO.html" class="link-seo">Bài Đăng SEO</a>
+      <a href="../HTML/Logic.html" class="link-logic">Tư Duy</a>
+      <a href="../HTML/Skill.html" class="link-skill">Kỹ Năng</a>
+    </nav>
+  </header>
+
+  <!--* ----- ----- ----- agency ----- ----- ----- -->
+  <section id="agency-section" class="agency-section">
+      <!--* ----- ----- container ----- ----- -->
+      <div class="box__hero-content" data-aos="fade-up" data-aos-delay="200">
+        <!--* ----- hero-title ----- -->
+        <h1 class="text__hero-title">
+          Biến ý tưởng thành <span>sản phẩm số đột phá</span>
+        </h1>
+        <!--* ----- hero-subtitle ----- -->
+        <p class="text__hero-subtitle">
+          Thực tập sinh phát triển <strong>web hiện đại</strong> & <strong>game tương tác cao</strong>, 
+          tối ưu hiệu năng, thiết kế ấn tượng và code chuẩn <em>“Clean Code”</em>.
+        </p>
+      </div>
+  </section>
+
+
+<!-- script Thư viện -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+<script>
+  AOS.init();
+</script>
+<!-- script SEO.js -->
+<script src="../JS/SEO.js"></script>
+</body>
+</html>
