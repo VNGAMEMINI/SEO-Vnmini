@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giới Thiệu - VNmini</title>
+    <!-- link Thư viện -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- link Agency.css -->
+  <link rel="stylesheet" href="../CSS/Agency.css">
+  <!-- style -->
+  <style>
+    .no-scroll { overflow: hidden; }
+    body {margin: 0; padding: 0; box-sizing: border-box;}
+    [x-cloak] { display: none !important; }
+  </style>
+</head>
+<body x-data="{ modalOpen: false }" :class="{ 'no-scroll': modalOpen }">
+
+  <!--* ----- ----- ----- menu ----- ----- ----- -->
+  <header id="menu-header" class="menu-header" 
+    x-data="{ open: false }" @scroll.window="open = false">
+    <!--* ----- ----- container ----- ----- -->
+    <div class="menu__container">
+      <a href="#" class="logo-gradient">VNmini</a>
+      <!--* ----- desktop-navbar ----- -->
+      <nav class="menu__desktop-navbar" aria-label="Menu chính">
+        <a href="../HTML/SEO.html">Trang chủ</a>
+        <a href="../HTML/Project.html">Dự án</a>
+        <a href="../HTML/Agency.html">Giới thiệu</a>
+        <a href="../HTML/Service.html">Dịch vụ</a>
+      </nav>
+      <button @click="open = !open" class="menu-button">
+        <i class="fas" :class="open ? 'fa-times' : 'fa-bars'"></i>
+      </button>
+    </div>
+
+    <!--* ----- ----- mobile-navbar ----- ----- -->
+    <nav x-show="open" 
+        @click.away="open = false"
+        class="menu__mobile-navbar" aria-label="Menu phụ">
+        <a href="../HTML/SEO.html">Trang chủ</a>
+        <a href="../HTML/Project.html">Dự án</a>
+        <a href="../HTML/Agency.html">Giới thiệu</a>
+        <a href="../HTML/Service.html">Dịch vụ</a>
+    </nav>
+  </header>
+    
+  <!--* ----- ----- ----- agency ----- ----- ----- -->
+  <section id="agency-section" class="agency-section">
+      <!--* ----- ----- container ----- ----- -->
+      <div class="agency__hero-content" data-aos="fade-up" data-aos-delay="200">
+        <!--* ----- hero-title ----- -->
+        <h1 class="text__hero-title">
+          Về VNmini & <span>Sứ mệnh sáng tạo</span>
+        </h1>
+        <!--* ----- hero-subtitle ----- -->
+        <p class="text__hero-subtitle">
+          Chúng tôi không chỉ viết mã, chúng tôi xây dựng <strong>giải pháp số</strong> bền vững. 
+          Với tư duy <em>Clean Code</em> và đam mê công nghệ, VNmini cam kết mang lại sản phẩm tối ưu nhất.        </p>
+      </div>
+  </section>
+
+  <!--* ----- ----- ----- story ----- ----- ----- -->
+  <section id="story-section" class="story-section">
+    <div class="story__container" data-aos="fade-up">
+      <h2 class="story__title">Câu chuyện <span>hình thành</span></h2>
+      <div class="story__grid">
+        <!-- item 1 -->
+        <div class="story__card">
+          <div class="story__dot"></div>
+          <h3>Khởi đầu</h3>
+          <p>Hành trình của VNmini bắt đầu từ những khát vọng nhỏ nhoi nhưng đầy nhiệt huyết của một nhóm lập trình viên trẻ. 
+             Chúng tôi nhận thấy khoảng cách lớn giữa tính thẩm mỹ đơn thuần và hiệu năng kỹ thuật thực tế, từ đó quyết tâm xây dựng 
+             những giải pháp số không chỉ đẹp mà còn đạt hiệu suất tối ưu ngay từ dòng code đầu tiên.</p>
+        </div>
+        <!-- item 2 -->
+        <div class="story__card">
+          <div class="story__dot"></div>
+          <h3>Phát triển</h3>
+          <p>Qua hàng loạt dự án thực chiến, chúng tôi không ngừng thử thách bản thân với những công nghệ mới nhất. 
+             Sự phát triển của VNmini gắn liền với việc chuẩn hóa quy trình <em>Clean Code</em> và tư duy thiết kế tập trung vào con người (Human-Centered Design), 
+             giúp biến những bài toán kinh doanh phức tạp trở thành những trải nghiệm người dùng tinh tế.</p>
+        </div>
+        <!-- item 3 -->
+        <div class="story__card">
+          <div class="story__dot"></div>
+          <h3>Hiện tại</h3>
+          <p>Ngày nay, VNmini tự hào là đơn vị tư vấn và phát triển sản phẩm số tin cậy cho nhiều đối tác. 
+             Chúng tôi không chỉ xây dựng website, mà còn kiến tạo những hệ sinh thái số bền vững, có khả năng mở rộng linh hoạt theo đà tăng trưởng 
+             của doanh nghiệp, giúp khách hàng tự tin khẳng định vị thế dẫn đầu trên không gian số.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--* ===== divider ===== -->
+  <hr class="hr-divider">
+
+  <!--* ----- ----- ----- article ----- ----- ----- -->
+  <section id="article-section" class="article-section" 
+    x-effect="modalOpen = openWeb || openSeo || openGame || openCode"
+    x-data="{ openWeb: false, openSeo: false, openGame: false, openCode: false}" >
+
+    <!--* ----- ----- title ----- ----- -->
+    <h1 class="article__title">Lĩnh vực chuyên môn</h1>
+
+    <article class="article__article">
+      <!--* ----- ----- overlay backdrop ----- ----- -->
+      <div class="article__overlay" 
+        x-show="modalOpen"
+        x-cloak
+        x-transition.opacity
+        @click="openWeb = openSeo = openGame = openCode = false"></div>
+      <!--* ----- ----- container-web ----- ----- -->
+      <div class="article__container-web" data-aos="flip-up">
+        <!-- website.jpg -->
+        <img src="../IMG/article/website.jpg" alt="website">
+        <h2>Thiết kế giao diện website</h2>
+        <p>Tạo ra những giao diện hiện đại, chuyên nghiệp và tối ưu UX.</p>
+        <button @click="openWeb = true">Đọc thêm</button>
+      </div>      
+      <!--* ----- read-more ----- -->
+      <div class="article__read-more"
+        x-show="openWeb" 
+        x-cloak
+        @click.away="openWeb = false">
+        <!-- website.jpg -->
+        <img src="../IMG/article/website.jpg" alt="website">
+        <div class="article__tablet-grid">
+          <h1 class="main-title">Thiết kế giao diện website</h1>
+          <p class="article__tablet-desc">
+            Thiết kế giao diện web không chỉ là tạo ra một website đẹp mà còn là quá trình 
+            kết hợp giữa thẩm mỹ, công nghệ và trải nghiệm người dùng (UX). 
+            Một giao diện tốt sẽ giúp tăng tỷ lệ chuyển đổi, giữ chân người dùng và nâng cao giá trị thương hiệu.
+          </p>
+          <button class="btn-tablet-outline" @click="openWeb = false">Đóng</button>
+        </div>
+        <!--* ===== thông tin bài viết ===== -->
+        <div class="article__detail">
+          <!--* --- desc --- -->
+          <p class="article__desc">
+            Thiết kế giao diện web không chỉ là tạo ra một website đẹp mà còn là quá trình 
+            kết hợp giữa thẩm mỹ, công nghệ và trải nghiệm người dùng (UX). 
+            Một giao diện tốt sẽ giúp tăng tỷ lệ chuyển đổi, giữ chân người dùng và nâng cao giá trị thương hiệu.
+          </p>
+          <!--* --- section 1 --- -->
+          <div class="article__section">
+            <h3>📌 Quy trình thiết kế</h3>
+            <ul>
+              <li>🔍 Phân tích yêu cầu & nghiên cứu người dùng</li>
+              <li>🧠 Xây dựng ý tưởng & wireframe</li>
+              <li>🎨 Thiết kế UI (màu sắc, typography, layout)</li>
+              <li>⚡ Tối ưu UX & hiệu suất</li>
+              <li>🚀 Triển khai & kiểm thử</li>
+            </ul>
+          </div>
+          <!--* --- section 2 --- -->
+          <div class="article__section">
+            <h3>🎯 Lợi ích khi thiết kế chuyên nghiệp</h3>
+            <!--* grid -->
+            <div class="article__grid">
+              <div class="card">
+                <h4>⚡ Tốc độ</h4>
+                <p>Tải nhanh, tối ưu SEO và trải nghiệm người dùng.</p>
+              </div>
+              <div class="card">
+                <h4>📱 Responsive</h4>
+                <p>Hiển thị hoàn hảo trên mọi thiết bị.</p>
+              </div>
+              <div class="card">
+                <h4>🎨 Thẩm mỹ</h4>
+                <p>Giao diện hiện đại, đúng xu hướng.</p>
+              </div>
+              <div class="card">
+                <h4>💰 Chuyển đổi</h4>
+                <p>Tăng tỷ lệ khách hàng và doanh thu.</p>
+              </div>
+            </div>
+          </div>
+          <!--* --- highlight --- -->
+          <div class="article__highlight">
+            <h3>💡 Điểm nổi bật</h3>
+            <p>
+              Thiết kế tối giản, tối ưu hiệu suất, chuẩn SEO, thân thiện mobile 
+              và tập trung vào trải nghiệm người dùng thực tế.
+            </p>
+          </div>
+          <!--* --- quote --- -->
+          <blockquote class="article__quote">
+            “Một giao diện tốt không chỉ đẹp mà còn phải giúp người dùng đạt mục tiêu nhanh nhất.”
+          </blockquote>
+          <!--* button -->
+          <button class="btn-outline" @click="openWeb = false">Đóng</button>
+        </div>
+      </div>
+      <!--* ----- ----- container-seo ----- ----- -->
+      <div class="article__container-seo" data-aos="flip-up">
+        <!-- seo.jpg -->
+        <img src="../IMG/article/seo.jpg" alt="seo">
+        <h2>Tối ưu SEO</h2>
+        <p>Nâng cao thứ hạng website trên công cụ tìm kiếm, tăng lượng truy cập tự nhiên và nhận diện thương hiệu.</p>
+        <button @click="openSeo = true">Đọc thêm</button>
+      </div>
+      <!--* ----- read-more ----- -->
+      <div class="article__read-more"
+          x-show="openSeo" 
+          x-cloak
+          @click.away="openSeo = false">
+          <!-- seo.jpg -->
+          <img src="../IMG/article/seo.jpg" alt="seo">
+          <div class="article__tablet-grid">
+            <h1 class="main-title">Tối ưu SEO</h1>
+            <p class="article__tablet-desc">
+              Tối ưu hóa công cụ tìm kiếm (SEO) là quá trình cải thiện thứ hạng của website trên các công cụ tìm kiếm như Google, Bing. 
+              Một chiến lược SEO hiệu quả giúp tăng lượng truy cập tự nhiên, nâng cao nhận diện thương hiệu và thúc đẩy doanh số.
+            </p>
+            <button class="btn-tablet-outline" @click="openSeo = false">Đóng</button>
+          </div>
+
+          <!--* ===== thông tin bài viết ===== -->
+          <div class="article__detail">
+            <!--* --- desc --- -->
+            <p class="article__desc">
+              Tối ưu hóa công cụ tìm kiếm (SEO) là quá trình cải thiện thứ hạng của website trên các công cụ tìm kiếm như Google, Bing. 
+              Một chiến lược SEO hiệu quả giúp tăng lượng truy cập tự nhiên, nâng cao nhận diện thương hiệu và thúc đẩy doanh số.
+            </p>
+            <!--* --- section 1 --- -->
+            <div class="article__section">
+              <h3>📌 Quy trình tối ưu SEO</h3>
+              <ul>
+                <li>🔍 Nghiên cứu từ khóa chuyên sâu</li>
+                <li>📝 Tối ưu hóa nội dung (On-page SEO)</li>
+                <li>🔗 Xây dựng liên kết chất lượng (Off-page SEO)</li>
+                <li>⚙️ Cải thiện hiệu suất kỹ thuật (Technical SEO)</li>
+                <li>📊 Theo dõi và phân tích kết quả</li>
+              </ul>
+            </div>
+            <!--* --- section 2 --- -->
+            <div class="article__section">
+              <h3>🎯 Lợi ích của SEO</h3>
+              <!--* grid -->
+              <div class="article__grid">
+                <div class="card">
+                  <h4>📈 Tăng traffic</h4>
+                  <p>Thu hút lượng lớn người dùng tiềm năng.</p>
+                </div>
+                <div class="card">
+                  <h4>⭐ Uy tín</h4>
+                  <p>Xây dựng niềm tin và sự tin cậy với khách hàng.</p>
+                </div>
+                <div class="card">
+                  <h4>💲 Chi phí</h4>
+                  <p>Hiệu quả hơn so với quảng cáo trả phí dài hạn.</p>
+                </div>
+                <div class="card">
+                  <h4>⚔️ Cạnh tranh</h4>
+                  <p>Vượt trội so với đối thủ trong ngành.</p>
+                </div>
+              </div>
+            </div>
+            <!--* --- highlight --- -->
+            <div class="article__highlight">
+              <h3>💡 Điểm nổi bật</h3>
+              <p>
+                Tập trung vào SEO mũ trắng, xây dựng nội dung giá trị, tối ưu trải nghiệm người dùng 
+                và liên tục cập nhật thuật toán tìm kiếm.
+              </p>
+            </div>
+            <!--* --- quote --- -->
+            <blockquote class="article__quote">
+              “SEO không phải là một cuộc đua tốc độ, mà là một cuộc marathon đòi hỏi sự kiên trì và chiến lược đúng đắn.”
+            </blockquote>
+            <!--* button -->
+            <button class="btn-outline" @click="openSeo = false">Đóng</button>
+          </div>
+      </div>
+      <!--* ----- ----- container-game ----- ----- -->
+      <div class="article__container-game" data-aos="flip-up">
+              <!-- game.jpg -->
+        <img src="../IMG/article/game.jpg" alt="game">
+        <h2>Phát triển Game tương tác</h2>
+        <p>Xây dựng các trò chơi hấp dẫn trên nền tảng web, tối ưu trải nghiệm người chơi và hiệu suất đồ họa.</p>
+        <button @click="openGame = true">Đọc thêm</button>
+      </div>
+      <!--* ----- read-more ----- -->
+      <div class="article__read-more"
+        x-show="openGame" 
+        x-cloak
+        @click.away="openGame = false">
+        <!-- game.jpg -->
+        <img src="../IMG/article/game.jpg" alt="game">
+        <div class="article__tablet-grid">
+          <h1 class="main-title">Phát triển Game tương tác</h1>
+          <p class="article__tablet-desc">
+            Phát triển game trên web (Web Games) mang lại khả năng tiếp cận cực cao khi người dùng không cần cài đặt. 
+            Sử dụng các công nghệ hiện đại như HTML5 Canvas, WebGL và các thư viện mạnh mẽ giúp tạo ra trải nghiệm mượt mà không kém gì ứng dụng native.
+          </p>
+          <button class="btn-tablet-outline" @click="openGame = false">Đóng</button>
+        </div>
+
+        <!--* ===== thông tin bài viết ===== -->
+        <div class="article__detail">
+          <!--* --- desc --- -->
+          <p class="article__desc">
+            Phát triển game trên web (Web Games) mang lại khả năng tiếp cận cực cao khi người dùng không cần cài đặt. 
+            Sử dụng các công nghệ hiện đại như HTML5 Canvas, WebGL và các thư viện mạnh mẽ giúp tạo ra trải nghiệm mượt mà không kém gì ứng dụng native.
+          </p>
+          <!--* --- section 1 --- -->
+          <div class="article__section">
+            <h3>📌 Quy trình phát triển</h3>
+            <ul>
+              <li>🎮 Thiết kế Gameplay & Cơ chế cốt lõi</li>
+              <li>🎨 Sáng tạo tài nguyên đồ họa & Animation</li>
+              <li>💻 Lập trình Logic, Vật lý & AI</li>
+              <li>🔊 Tích hợp hiệu ứng âm thanh & Nhạc nền</li>
+              <li>⚡ Tối ưu hóa hiệu suất (Memory & FPS)</li>
+            </ul>
+          </div>
+          <!--* --- section 2 --- -->
+          <div class="article__section">
+            <h3>🎯 Ưu điểm của Web Game</h3>
+            <!--* grid -->
+            <div class="article__grid">
+              <div class="card">
+                <h4>🌐 Đa nền tảng</h4>
+                <p>Chạy mượt mà trên mọi trình duyệt mobile và desktop.</p>
+              </div>
+              <div class="card">
+                <h4>⚡ Truy cập nhanh</h4>
+                <p>Chơi ngay lập tức, không cần tải hay cài đặt phức tạp.</p>
+              </div>
+              <div class="card">
+                <h4>🤝 Tương tác</h4>
+                <p>Dễ dàng chia sẻ và tích hợp các tính năng cộng đồng.</p>
+              </div>
+              <div class="card">
+                <h4>📈 Tiếp cận</h4>
+                <p>Khả năng viral cao nhờ tính tiện dụng của liên kết web.</p>
+              </div>
+            </div>
+          </div>
+          <!--* --- highlight --- -->
+          <div class="article__highlight">
+            <h3>💡 Điểm nổi bật</h3>
+            <p>
+              Kết hợp giữa tư duy lập trình logic và óc sáng tạo nghệ thuật để mang lại những trải nghiệm giải trí độc đáo, thu hút người dùng trên nền tảng web.
+            </p>
+          </div>
+          <!--* --- quote --- -->
+          <blockquote class="article__quote">
+            “Game không chỉ là giải trí, đó là một thế giới nơi người chơi tương tác với trí tưởng tượng của nhà phát triển.”
+          </blockquote>
+          <!--* button -->
+          <button class="btn-outline" @click="openGame = false">Đóng</button>
+        </div>
+      </div>    
+      <!--* ----- ----- container-code ----- ----- -->
+      <div class="article__container-code" data-aos="flip-up">
+        <!-- code.jpg -->
+        <img src="../IMG/article/code.jpg" alt="clean code">
+        <h2>Lập trình & Clean Code</h2>
+        <p>Viết mã nguồn sạch, có tổ chức và tối ưu là chìa khóa để xây dựng các ứng dụng bền vững và dễ bảo trì.</p>
+        <button @click="openCode = true">Đọc thêm</button>
+      </div>
+      <!--* ----- read-more ----- -->
+      <div class="article__read-more"
+        x-show="openCode" 
+        x-cloak
+        @click.away="openCode = false">
+        <!-- code.jpg -->
+        <img src="../IMG/article/code.jpg" alt="clean code">
+        <div class="article__tablet-grid">
+          <h1 class="main-title">Lập trình & Clean Code</h1>
+          <p class="article__tablet-desc">
+            Clean Code không chỉ là việc viết mã chạy được, mà là viết mã để con người có thể hiểu được. 
+            Việc áp dụng các tiêu chuẩn lập trình thông minh giúp giảm thiểu nợ kỹ thuật và tăng tốc độ phát triển dự án trong dài hạn.
+          </p>
+          <button class="btn-tablet-outline" @click="openCode = false">Đóng</button>
+        </div>
+
+        <!--* ===== thông tin bài viết ===== -->
+        <div class="article__detail">
+          <!--* --- desc --- -->
+          <p class="article__desc">
+            Clean Code không chỉ là việc viết mã chạy được, mà là viết mã để con người có thể hiểu được. 
+            Việc áp dụng các tiêu chuẩn lập trình thông minh giúp giảm thiểu nợ kỹ thuật và tăng tốc độ phát triển dự án trong dài hạn.
+          </p>
+          <!--* --- section 1 --- -->
+          <div class="article__section">
+            <h3>📌 Nguyên tắc cốt lõi</h3>
+            <ul>
+              <li>🧩 Quy hoạch cấu trúc thư mục & file logic</li>
+              <li>✍️ Đặt tên biến, hàm có ý nghĩa (Semantic Naming)</li>
+              <li>🧹 Áp dụng DRY (Don't Repeat Yourself) & KISS</li>
+              <li>🛠 Tối ưu hóa logic & Refactoring thường xuyên</li>
+              <li>📖 Viết Documentation & Comment thông minh</li>
+            </ul>
+          </div>
+          <!--* --- section 2 --- -->
+          <div class="article__section">
+            <h3>🎯 Giá trị mang lại</h3>
+            <!--* grid -->
+            <div class="article__grid">
+              <div class="card">
+                <h4>⚙️ Bảo trì</h4>
+                <p>Dễ dàng cập nhật và sửa lỗi mà không phá vỡ hệ thống.</p>
+              </div>
+              <div class="card">
+                <h4>🚀 Hiệu suất</h4>
+                <p>Mã nguồn gọn nhẹ, tối ưu tài nguyên phần cứng.</p>
+              </div>
+              <div class="card">
+                <h4>👥 Teamwork</h4>
+                <p>Đồng nhất quy chuẩn giúp cộng tác hiệu quả hơn.</p>
+              </div>
+              <div class="card">
+                <h4>📈 Mở rộng</h4>
+                <p>Cấu trúc linh hoạt, sẵn sàng cho các tính năng mới.</p>
+              </div>
+            </div>
+          </div>
+          <!--* --- highlight --- -->
+          <div class="article__highlight">
+            <h3>💡 Điểm nổi bật</h3>
+            <p>
+              Tư duy lập trình hiện đại kết hợp với các mẫu thiết kế (Design Patterns) 
+              giúp tạo ra những sản phẩm số có độ tin cậy cao và chuẩn chuyên nghiệp.
+            </p>
+          </div>
+          <!--* --- quote --- -->
+          <blockquote class="article__quote">
+            “Bất kỳ kẻ ngốc nào cũng có thể viết code máy tính hiểu. Lập trình viên giỏi viết code con người hiểu.”
+          </blockquote>
+          <!--* button -->
+          <button class="btn-outline" @click="openCode = false">Đóng</button>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <!--* ===== divider ===== -->
+  <hr class="hr-divider">
+
+  <!--* ----- ----- ----- process-section ----- ----- ----- -->
+  <section id="process-section" class="process-section">
+    <div class="process__container" data-aos="fade-up">
+      <h2 class="process__title">Quy trình <span>làm việc</span></h2>
+      <div class="process__grid">
+        <!-- Bước 1 -->
+        <div class="process__step" data-aos="zoom-in" data-aos-delay="100">
+          <div class="process__icon-box">
+            <i class="fas fa-comments"></i>
+            <span class="process__number">01</span>
+          </div>
+          <h3>Khám phá & Tư vấn</h3>
+          <p>Lắng nghe nhu cầu và phân tích mục tiêu kinh doanh để đề xuất giải pháp tối ưu.</p>
+          <ul class="process__details">
+            <li>Phân tích yêu cầu khách hàng</li>
+            <li>Nghiên cứu đối thủ & thị trường</li>
+            <li>Lập lộ trình phát triển (Roadmap)</li>
+          </ul>
+        </div>
+        <!-- Bước 2 -->
+        <div class="process__step" data-aos="zoom-in" data-aos-delay="200">
+          <div class="process__icon-box">
+            <i class="fas fa-pen-ruler"></i>
+            <span class="process__number">02</span>
+          </div>
+          <h3>Thiết kế & Giải pháp</h3>
+          <p>Xây dựng cấu trúc và thiết kế giao diện hiện đại, tập trung vào trải nghiệm người dùng.</p>
+          <ul class="process__details">
+            <li>Thiết kế Sitemap & Wireframe</li>
+            <li>Thiết kế UI/UX (High-fidelity)</li>
+            <li>Xây dựng Prototype tương tác</li>
+          </ul>
+        </div>
+        <!-- Bước 3 -->
+        <div class="process__step" data-aos="zoom-in" data-aos-delay="300">
+          <div class="process__icon-box">
+            <i class="fas fa-code"></i>
+            <span class="process__number">03</span>
+          </div>
+          <h3>Lập trình & Kiểm thử</h3>
+          <p>Hiện thực hóa ý tưởng bằng mã nguồn sạch, đảm bảo hiệu suất và bảo mật cao.</p>
+          <ul class="process__details">
+            <li>Lập trình Front-end & Back-end</li>
+            <li>Tối ưu hóa tốc độ & Clean Code</li>
+            <li>Kiểm thử đa thiết bị (QA/QC)</li>
+          </ul>
+        </div>
+        <!-- Bước 4 -->
+        <div class="process__step" data-aos="zoom-in" data-aos-delay="400">
+          <div class="process__icon-box">
+            <i class="fas fa-rocket"></i>
+            <span class="process__number">04</span>
+          </div>
+          <h3>Bàn giao & Đồng hành</h3>
+          <p>Vận hành thực tế và cam kết hỗ trợ kỹ thuật, bảo trì định kỳ cho sản phẩm.</p>
+          <ul class="process__details">
+            <li>Triển khai Cloud Hosting/Server</li>
+            <li>Đào tạo & Hướng dẫn sử dụng</li>
+            <li>Bảo hành & Nâng cấp định kỳ</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--* ===== divider ===== -->
+  <hr class="hr-divider">
+
+  <!--* ----- ----- ----- values ----- ----- ----- -->
+  <section id="values-section" class="values-section">
+    <div class="values__container" data-aos="fade-up">
+      <h2 class="values__title">Giá trị chúng tôi <span>theo đuổi</span></h2>
+      <div class="values__grid">
+        <!-- minh bạch -->
+        <div class="values__item">
+          <i class="fas fa-eye"></i>
+          <h4>Minh bạch</h4>
+          <p>Chúng tôi luôn duy trì sự trung thực tuyệt đối trong báo cáo tiến độ và chi phí. 
+             Mọi kế hoạch triển khai đều được thảo luận kỹ lưỡng để đảm bảo khách hàng luôn nắm bắt được dự án của mình.</p>
+        </div>
+        <!-- chất lượng -->
+        <div class="values__item">
+          <i class="fas fa-shield-halved"></i>
+          <h4>Chất lượng</h4>
+          <p>Không có chỗ cho những sai sót cơ bản. VNmini áp dụng các tiêu chuẩn kiểm thử nghiêm ngặt, 
+             đảm bảo mỗi sản phẩm xuất xưởng đều đạt độ hoàn thiện cao nhất về cả logic lẫn giao diện.</p>
+        </div>
+        <!-- đồng hành -->
+        <div class="values__item">
+          <i class="fas fa-handshake-angle"></i>
+          <h4>Đồng hành</h4>
+          <p>Sự thành công của khách hàng chính là thành công của chúng tôi. VNmini cam kết hỗ trợ kỹ thuật tận tâm, 
+             sẵn sàng tư vấn các chiến lược nâng cấp và tối ưu hóa sản phẩm trong suốt quá trình vận hành.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--* ===== divider ===== -->
+  <hr class="hr-divider">
+
+  <!--* ----- ----- ----- roadmap ----- ----- ----- -->
+  <section id="roadmap-section" class="roadmap-section">
+    <div class="roadmap__container" data-aos="fade-up">
+      <h2 class="roadmap__title">Lộ trình <span>tương lai</span></h2>
+      <div class="roadmap__timeline">
+        <!-- 2026 -->
+        <div class="roadmap__step" data-aos="fade-left" data-aos-delay="100">
+          <span class="roadmap__year">2026</span>
+          <div class="roadmap__content">
+            <h3>Củng cố & Bứt phá</h3>
+            <p>Hoàn thiện portfolio chuyên nghiệp và tham gia vào các dự án thực tế quy mô lớn hơn.</p>
+          </div>
+        </div>
+        <!-- 2027 -->
+        <div class="roadmap__step" data-aos="fade-left" data-aos-delay="200">
+          <span class="roadmap__year">2027</span>
+          <div class="roadmap__content">
+            <h3>Hệ sinh thái sản phẩm</h3>
+            <p>Mở rộng sang phát triển các sản phẩm web tiện ích, công cụ hỗ trợ và hệ thống quản trị thông minh.</p>
+          </div>
+        </div>
+        <!-- 2028+ -->
+        <div class="roadmap__step" data-aos="fade-left" data-aos-delay="300">
+          <span class="roadmap__year">2028+</span>
+          <div class="roadmap__content">
+            <h3>Khẳng định vị thế</h3>
+            <p>Xây dựng thương hiệu cá nhân và tổ chức mạnh mẽ trong lĩnh vực Front-end Development toàn cầu.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--* ===== divider ===== -->
+  <hr class="hr-divider">
+
+  <!--* ----- ----- ----- cta-section ----- ----- ----- -->
+  <section id="cta-section" class="cta-section" style="padding: 80px 20px; text-align: center; background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: white;">
+    <div class="cta__container" data-aos="zoom-in">
+      <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Sẵn sàng biến ý tưởng thành <span>hiện thực?</span></h2>
+      <p style="max-width: 700px; margin: 0 auto 30px; opacity: 0.9; line-height: 1.6;">
+        Cho dù bạn là một startup đang khởi nghiệp hay một doanh nghiệp lâu đời muốn chuyển đổi số, 
+        VNmini luôn sẵn sàng lắng nghe và cung cấp những giải pháp tối ưu nhất cho nhu cầu của bạn.
+      </p>
+      <div class="cta__buttons" style="display: flex; gap: 15px; justify-content: center;">
+        <a href="../HTML/Service.html" class="btn-primary" style="padding: 12px 30px; background: #38bdf8; color: #0f172a; border-radius: 8px; text-decoration: none; font-weight: bold;">
+          Bắt đầu ngay
+        </a>
+        <a href="https://zalo.me/your_number" class="btn-secondary" style="padding: 12px 30px; border: 1px solid #38bdf8; color: #38bdf8; border-radius: 8px; text-decoration: none; font-weight: bold;">
+          Liên hệ tư vấn
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!--* ===== divider ===== -->
+  <hr class="hr-divider">
+
+  <!--* ----- ----- ----- footer ----- ----- ----- -->
+  <footer id="footer-section" class="footer-section">
+    <!--* ----- ----- container ----- ----- -->
+    <div class="footer__container" data-aos="fade-up">
+      
+      <div class="footer__top">
+        <a href="#" class="logo-gradient">VNmini</a>
+        <p class="footer__tagline">Kiến tạo sản phẩm số chuyên nghiệp & tối ưu.</p>
+        
+        <div class="footer__socials">
+          <a href="mailto:pnsong2707@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+          <a href="https://github.com/VNGAMEMINI" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://www.facebook.com/profile.php?id=61554146223655" target="_blank" title="Facebook" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
+        </div>
+      </div>
+
+      <hr class="footer__divider">
+
+      <div class="footer__bottom">
+        <div class="footer__copyright">
+          © 2026 <span>VNmini</span> • Web Creator • Product Developer
+        </div>
+        <div class="footer__policy">
+          <a href="#">Chính sách bảo mật</a>
+          <a href="#">Điều khoản sử dụng</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+<!-- script Thư viện -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+<script>
+  AOS.init();
+</script>
+</body>
+</html>

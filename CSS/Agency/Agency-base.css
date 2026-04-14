@@ -1,0 +1,43 @@
+
+/* --------------------------
+| Thẻ  | Kích thước mặc định |
+| ---- | ------------------- |
+| `h1` | 2rem (≈ 32px)       |
+| `h2` | 1.5rem (≈ 24px)     |
+| `h3` | 1.17rem (≈ 18.72px) |
+| `h4` | 1rem (≈ 16px)       |
+| `h5` | 0.83rem (≈ 13.28px) |
+| `h6` | 0.67rem (≈ 10.72px) | 
+-------------------------- */
+/* @layer
+  base (thấp nhất)
+  components (trung bình)
+  utilities (cao nhất)
+*/
+/*
+  Mobile: 480px
+  Tablet: 768px
+  Laptop: 1024px
+  Desktop: 1440px
+  TV / 4K: 1920px
+*/
+
+@layer base {
+/** ===== overlay backdrop ===== */
+.article__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+}
+/** ===== divider ===== */
+.hr-divider {
+  border: none;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #38bdf8, transparent);
+}
+}

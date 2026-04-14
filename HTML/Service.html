@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dịch vụ - VNmini</title>
+    <!-- link Thư viện -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- link Service.css -->
+  <link rel="stylesheet" href="../CSS/Service.css">
+  <!-- style -->
+  <style>
+    .no-scroll { overflow: hidden; }
+    body {margin: 0; padding: 0; box-sizing: border-box;}
+    [x-cloak] { display: none !important; }
+  </style>
+</head>
+<body x-data="{ modalOpen: false }" :class="{ 'no-scroll': modalOpen }">
+
+  <!--* ----- ----- ----- footer ----- ----- ----- -->
+  <footer id="footer-section" class="footer-section">
+    <div class="footer__container" data-aos="fade-up">
+      <div class="footer__top">
+        <a href="#" class="logo-gradient">VNmini</a>
+        <p class="footer__tagline">Kiến tạo sản phẩm số chuyên nghiệp & tối ưu.</p>
+        <div class="footer__socials">
+          <a href="mailto:pnsong2707@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+          <a href="https://github.com/VNGAMEMINI" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://www.facebook.com/profile.php?id=61554146223655" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+        </div>
+      </div>
+      <hr class="footer__divider">
+      <div class="footer__bottom">
+        <div class="footer__copyright">
+          © 2026 <span>VNmini</span> • Web Creator • Product Developer
+        </div>
+        <div class="footer__policy">
+          <a href="#">Chính sách bảo mật</a>
+          <a href="#">Điều khoản sử dụng</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script>
+    AOS.init({ duration: 800, once: true });
+  </script>
+</body>
+</html>

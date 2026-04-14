@@ -23,9 +23,9 @@
 */
 
 /** ===== import ===== */
-@import url("./SEO/SEO-base.css");
-@import url("./SEO/SEO-components.css");
-@import url("./SEO/SEO-utilities.css");
+@import url("./Agency/Agency-base.css");
+@import url("./Agency/Agency-components.css");
+@import url("./Agency/Agency-utilities.css");
 
 /** ===== CSS trước layer hệ thống ===== */
 body {
