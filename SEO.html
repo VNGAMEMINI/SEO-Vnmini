@@ -1,52 +1,69 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bài Đăng SEO</title>
     <!-- link Thư viện -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <!-- link SEO.css -->
-  <link rel="stylesheet" href="../CSS/SEO.css">
-  <!-- style -->
-  <style>
-    .no-scroll { overflow: hidden; }
-    body {margin: 0; padding: 0; box-sizing: border-box;}
-    [x-cloak] { display: none !important; }
-  </style>
-</head>
-<body x-data="{ modalOpen: false }" :class="{ 'no-scroll': modalOpen }">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- link SEO.css -->
+    <link rel="stylesheet" href="../CSS/SEO.css" />
+    <!-- style -->
+    <style>
+      .no-scroll {
+        overflow: hidden;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      [x-cloak] {
+        display: none !important;
+      }
+    </style>
+  </head>
+  <body x-data="{ modalOpen: false }" :class="{ 'no-scroll': modalOpen }">
+    <!--* ----- ----- ----- menu ----- ----- ----- -->
+    <header
+      id="menu-header"
+      class="menu-header"
+      x-data="{ open: false }"
+      @scroll.window="open = false"
+    >
+      <!--* ----- ----- container ----- ----- -->
+      <div class="menu__container">
+        <a href="#" class="logo-gradient">VNmini</a>
+        <!--* ----- desktop-navbar ----- -->
+        <nav class="menu__desktop-navbar" aria-label="Menu chính">
+          <a href="#">Trang chủ</a>
+          <a href="../HTML/Agency.html">Giới thiệu</a>
+          <a href="../HTML/Service.html">Dịch vụ</a>
+        </nav>
+        <button @click="open = !open" class="menu-button">
+          <i class="fas" :class="open ? 'fa-times' : 'fa-bars'"></i>
+        </button>
+      </div>
 
-  <!--* ----- ----- ----- menu ----- ----- ----- -->
-  <header id="menu-header" class="menu-header" 
-    x-data="{ open: false }" @scroll.window="open = false">
-    <!--* ----- ----- container ----- ----- -->
-    <div class="menu__container">
-      <a href="#" class="logo-gradient">VNmini</a>
-      <!--* ----- desktop-navbar ----- -->
-      <nav class="menu__desktop-navbar" aria-label="Menu chính">
-        <a href="../HTML/SEO.html">Trang chủ</a>
+      <!--* ----- ----- mobile-navbar ----- ----- -->
+      <nav
+        x-show="open"
+        @click.away="open = false"
+        class="menu__mobile-navbar"
+        aria-label="Menu phụ"
+      >
+        <a href="#">Trang chủ</a>
         <a href="../HTML/Agency.html">Giới thiệu</a>
         <a href="../HTML/Service.html">Dịch vụ</a>
       </nav>
-      <button @click="open = !open" class="menu-button">
-        <i class="fas" :class="open ? 'fa-times' : 'fa-bars'"></i>
-      </button>
-    </div>
+    </header>
 
-    <!--* ----- ----- mobile-navbar ----- ----- -->
-    <nav x-show="open" 
-        @click.away="open = false"
-        class="menu__mobile-navbar" aria-label="Menu phụ">
-        <a href="../HTML/SEO.html">Trang chủ</a>
-        <a href="../HTML/Agency.html">Giới thiệu</a>
-        <a href="../HTML/Service.html">Dịch vụ</a>
-    </nav>
-  </header>
-
-  <!--* ----- ----- ----- agency ----- ----- ----- -->
-  <section id="agency-section" class="agency-section">
+    <!--* ----- ----- ----- agency ----- ----- ----- -->
+    <section id="agency-section" class="agency-section">
       <!--* ----- ----- container ----- ----- -->
       <div class="agency__hero-content" data-aos="fade-up" data-aos-delay="200">
         <!--* ----- hero-title ----- -->
@@ -55,298 +72,388 @@
         </h1>
         <!--* ----- hero-subtitle ----- -->
         <p class="text__hero-subtitle">
-          Chuyên thiết kế <strong>website hiện đại</strong>, phát triển <strong>tool web hữu ích</strong>, 
-          <strong>mini game HTML5</strong> và dự án <em>tối ưu hiệu suất</em> sẵn sàng vận hành.
+          Chuyên thiết kế <strong>website hiện đại</strong>, phát triển
+          <strong>tool web hữu ích</strong>, <strong>mini game HTML5</strong> và
+          dự án <em>tối ưu hiệu suất</em> sẵn sàng vận hành.
         </p>
       </div>
       <!--* ----- ----- link ----- ----- -->
       <div class="agency__hero-link">
-        <a href="https://github.com/VNGAMEMINI/B-i-ng-SEO.git" class="project"><i class="fa-brands fa-github"></i> Dự án git</a>
+        <a href="https://github.com/VNGAMEMINI/B-i-ng-SEO.git" class="project"
+          ><i class="fa-brands fa-github"></i> Dự án git</a
+        >
         <a href="" class="contact">Liên hệ</a>
       </div>
-  </section>
+    </section>
 
-  <!--* ----- ----- ----- career ----- ----- ----- -->
-  <section id="career-section" class="career-section">
+    <!--* ----- ----- ----- career ----- ----- ----- -->
+    <section id="career-section" class="career-section">
+      <!--* ----- ----- container ----- ----- -->
+      <div class="career__container" data-aos="fade-up">
+        <div class="career__grid">
+          <!--* ----- xin việc ----- -->
+          <div class="career__container-job">
+            <h4><i class="fas fa-user-tie"></i> Xin việc</h4>
+            <p>
+              Tìm cơ hội thực tập, Front-end Developer hoặc cộng tác dự án thực
+              tế.
+            </p>
+          </div>
+          <!--* ----- kỹ năng ----- -->
+          <div class="career__container-skill">
+            <h4><i class="fas fa-laptop-code"></i> Kỹ năng</h4>
+            <p>
+              HTML, CSS, JavaScript, Responsive UI, Clean Code, UI/UX nâng cao.
+            </p>
+          </div>
+          <!--* ----- giá trị ----- -->
+          <div class="career__container-value">
+            <h4><i class="fas fa-gem"></i> Giá trị</h4>
+            <p>
+              Làm nhanh, tối ưu tốt, giao diện đẹp, dễ bảo trì và dễ nâng cấp.
+            </p>
+          </div>
+          <!--* ----- mục tiêu ----- -->
+          <div class="career__container-target">
+            <h4><i class="fas fa-crosshairs"></i> Mục tiêu</h4>
+            <p>
+              Xây dựng sản phẩm chất lượng và phát triển lâu dài cùng khách
+              hàng.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--* ===== divider ===== -->
+    <hr class="hr-divider" />
+
     <!--* ----- ----- container ----- ----- -->
-    <div class="career__container" data-aos="fade-up">
-      <div class="career__grid">
-        <!--* ----- xin việc ----- -->
-        <div class="career__container-job">
-          <h4><i class="fas fa-user-tie"></i> Xin việc</h4>
-          <p>Tìm cơ hội thực tập, Front-end Developer hoặc cộng tác dự án thực tế.</p>
-        </div>
-        <!--* ----- kỹ năng ----- -->
-        <div class="career__container-skill">
-          <h4><i class="fas fa-laptop-code"></i> Kỹ năng</h4>
-          <p>HTML, CSS, JavaScript, Responsive UI, Clean Code, UI/UX nâng cao.</p>
-        </div>
-        <!--* ----- giá trị ----- -->
-        <div class="career__container-value">
-          <h4><i class="fas fa-gem"></i> Giá trị</h4>
-          <p>Làm nhanh, tối ưu tốt, giao diện đẹp, dễ bảo trì và dễ nâng cấp.</p>
-        </div>
-        <!--* ----- mục tiêu ----- -->
-        <div class="career__container-target">
-          <h4><i class="fas fa-crosshairs"></i> Mục tiêu</h4>
-          <p>Xây dựng sản phẩm chất lượng và phát triển lâu dài cùng khách hàng.</p>
+    <section id="exigency-section" class="exigency-section">
+      <!--* ----- ----- container ----- ----- -->
+      <div class="exigency__container">
+        <h2 class="exigency__title">Giải quyết nhu cầu thực tế</h2>
+        <div class="exigency__grid">
+          <!--* ----- card 1 ----- -->
+          <div class="exigency__card" data-aos="fade-up" data-aos-delay="100">
+            <i class="fas fa-laptop-code"></i>
+            <h4>Thiết kế Website</h4>
+            <p>
+              Nhận làm Landing page, Portfolio, web bán hàng. Giao diện dễ nhìn,
+              chạy tốt trên cả máy tính và điện thoại.
+            </p>
+          </div>
+          <!--* ----- card 2 ----- -->
+          <div class="exigency__card" data-aos="fade-up" data-aos-delay="200">
+            <i class="fas fa-screwdriver-wrench"></i>
+            <h4>Làm Tool Web</h4>
+            <p>
+              Các công cụ hỗ trợ SEO, bảng tính, ứng dụng nhỏ chạy trên trình
+              duyệt giúp bạn làm việc nhanh và tiện lợi hơn.
+            </p>
+          </div>
+          <!--* ----- card 3 ----- -->
+          <div class="exigency__card" data-aos="fade-up" data-aos-delay="300">
+            <i class="fas fa-gamepad"></i>
+            <h4>Game HTML5</h4>
+            <p>
+              Các trò chơi nhẹ nhàng, dễ chơi trên trình duyệt. Phù hợp để giải
+              trí hoặc dùng thu hút khách hàng.
+            </p>
+          </div>
+          <!--* ----- card 4 ----- -->
+          <div class="exigency__card" data-aos="fade-up" data-aos-delay="600">
+            <i class="fas fa-file-code"></i>
+            <h4>Chia sẻ Source Code</h4>
+            <p>
+              Cung cấp mã nguồn các dự án hoàn thiện. Code được viết gọn gàng,
+              dễ hiểu, mua về là có thể sử dụng ngay.
+            </p>
+          </div>
+          <!--* ----- card 5 ----- -->
+          <div class="exigency__card" data-aos="fade-up" data-aos-delay="900">
+            <i class="fas fa-tools"></i>
+            <h4>Hỗ trợ & Sửa lỗi</h4>
+            <p>
+              Nhận kiểm tra và xử lý các lỗi web, tối ưu tốc độ giúp trang web
+              của bạn chạy mượt mà và ổn định hơn.
+            </p>
+          </div>
+          <!--* ----- card 6 ----- -->
+          <div class="exigency__card" data-aos="fade-up" data-aos-delay="1200">
+            <i class="fas fa-rocket"></i>
+            <h4>Cải thiện & Nâng cấp</h4>
+            <p>
+              Thêm tính năng mới, làm mới giao diện hoặc tối ưu hệ thống để
+              trang web luôn bắt kịp xu hướng hiện tại.
+            </p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
+    <!--* ===== divider ===== -->
+    <hr class="hr-divider" />
 
-  <!--* ===== divider ===== -->
-  <hr class="hr-divider">
+    <!--* ----- ----- ----- advantage ----- ----- ----- -->
+    <section id="advantage-section" class="advantage-section">
+      <!--* ----- ----- stat-box ----- ----- -->
+      <div class="advantage__container">
+        <!--* ----- header ----- -->
+        <div class="advantage__header" data-aos="fade-up">
+          <h2 class="advantage__main-title">
+            Giá trị cốt lõi từ <span>VNmini</span>
+          </h2>
+          <p class="advantage__subtitle">
+            Không chỉ xây dựng website, VNmini mang đến giải pháp số hiệu quả,
+            hiện đại và dễ phát triển lâu dài.
+          </p>
+        </div>
 
-  <!--* ----- ----- container ----- ----- -->
-  <section id="exigency-section" class="exigency-section">
-    <!--* ----- ----- container ----- ----- -->
-    <div class="exigency__container">
-      <h2 class="exigency__title">Giải quyết nhu cầu thực tế</h2>
-      <div class="exigency__grid">
-        <!--* ----- card 1 ----- -->
-        <div class="exigency__card" data-aos="fade-up" data-aos-delay="100">
-          <i class="fas fa-laptop-code"></i>
-          <h4>Thiết kế Website</h4>
-          <p>Nhận làm Landing page, Portfolio, web bán hàng. Giao diện dễ nhìn, chạy tốt trên cả máy tính và điện thoại.</p>
-        </div>
-        <!--* ----- card 2 ----- -->
-        <div class="exigency__card" data-aos="fade-up" data-aos-delay="200">
-          <i class="fas fa-screwdriver-wrench"></i>
-          <h4>Làm Tool Web</h4>
-          <p>Các công cụ hỗ trợ SEO, bảng tính, ứng dụng nhỏ chạy trên trình duyệt giúp bạn làm việc nhanh và tiện lợi hơn.</p>
-        </div>
-        <!--* ----- card 3 ----- -->
-        <div class="exigency__card" data-aos="fade-up" data-aos-delay="300">
-          <i class="fas fa-gamepad"></i>
-          <h4>Game HTML5</h4>
-          <p>Các trò chơi nhẹ nhàng, dễ chơi trên trình duyệt. Phù hợp để giải trí hoặc dùng thu hút khách hàng.</p>
-        </div>
-        <!--* ----- card 4 ----- -->
-        <div class="exigency__card" data-aos="fade-up" data-aos-delay="600">
-          <i class="fas fa-file-code"></i>
-          <h4>Chia sẻ Source Code</h4>
-          <p>Cung cấp mã nguồn các dự án hoàn thiện. Code được viết gọn gàng, dễ hiểu, mua về là có thể sử dụng ngay.</p>
-        </div>
-        <!--* ----- card 5 ----- -->
-        <div class="exigency__card" data-aos="fade-up" data-aos-delay="900">
-          <i class="fas fa-tools"></i>
-          <h4>Hỗ trợ & Sửa lỗi</h4>
-          <p>Nhận kiểm tra và xử lý các lỗi web, tối ưu tốc độ giúp trang web của bạn chạy mượt mà và ổn định hơn.</p>
-        </div>
-        <!--* ----- card 6 ----- -->
-        <div class="exigency__card" data-aos="fade-up" data-aos-delay="1200">
-          <i class="fas fa-rocket"></i>
-          <h4>Cải thiện & Nâng cấp</h4>
-          <p>Thêm tính năng mới, làm mới giao diện hoặc tối ưu hệ thống để trang web luôn bắt kịp xu hướng hiện tại.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!--* ===== divider ===== -->
-  <hr class="hr-divider">
-
-  <!--* ----- ----- ----- advantage ----- ----- ----- -->
-  <section id="advantage-section" class="advantage-section">
-    <!--* ----- ----- stat-box ----- ----- -->
-    <div class="advantage__container">
-      
-      <!--* ----- header ----- -->
-      <div class="advantage__header" data-aos="fade-up">
-        <h2 class="advantage__main-title">Giá trị cốt lõi từ <span>VNmini</span></h2>
-        <p class="advantage__subtitle">Không chỉ xây dựng website, VNmini mang đến giải pháp số
-        hiệu quả, hiện đại và dễ phát triển lâu dài.</p>
-      </div>
-      
-      <!--* ----- stats-grid ----- -->
-      <div class="advantage__stats-grid" data-aos="fade-up">
-        <div class="stat-box">
-          <h3 class="stat-box__number">0+</h3>
-          <p class="stat-box__label">Dự án hoàn thành</p>
-          <span class="stat-box__sub">Chất lượng đã được khẳng định</span>
-        </div>
-        <div class="stat-box">
-          <h3 class="stat-box__number">100%</h3>
-          <p class="stat-box__label">Responsive</p>
-          <span class="stat-box__sub">Tối ưu trên mọi thiết bị</span>
-        </div>
-        <div class="stat-box">
-          <h3 class="stat-box__number">Fast</h3>
-          <p class="stat-box__label">Tối ưu tốc độ</p>
-          <span class="stat-box__sub">Tải trang cực nhanh < 2s</span>
-        </div>
-        <div class="stat-box">
-          <h3 class="stat-box__number">12/7</h3>
-          <p class="stat-box__label">Hỗ trợ nâng cấp</p>
-          <span class="stat-box__sub">Đồng hành cùng bạn lâu dài</span>
-        </div>
-      </div>
-
-      <!--* ----- why-choose ----- -->
-      <div class="advantage__why-choose" data-aos="fade-up" data-aos-delay="200">
-        <h2 class="advantage__title"><i class="fas fa-star"></i> Vì sao chọn VNmini?</h2>
-        <!--* grid -->
-        <div class="advantage__list-grid">
-          <div class="advantage__item" data-aos="fade-left" data-aos-delay="300">
-            <i class="fas fa-check-circle"></i> <span>Code sạch dễ bảo trì</span>
+        <!--* ----- stats-grid ----- -->
+        <div class="advantage__stats-grid" data-aos="fade-up">
+          <div class="stat-box">
+            <h3 class="stat-box__number">0+</h3>
+            <p class="stat-box__label">Dự án hoàn thành</p>
+            <span class="stat-box__sub">Chất lượng đã được khẳng định</span>
           </div>
-          <div class="advantage__item" data-aos="fade-left" data-aos-delay="400">
-            <i class="fas fa-check-circle"></i> <span>Giao diện hiện đại</span>
+          <div class="stat-box">
+            <h3 class="stat-box__number">100%</h3>
+            <p class="stat-box__label">Responsive</p>
+            <span class="stat-box__sub">Tối ưu trên mọi thiết bị</span>
           </div>
-          <div class="advantage__item" data-aos="fade-left" data-aos-delay="500">
-            <i class="fas fa-check-circle"></i> <span>Chạy mượt mọi thiết bị</span>
+          <div class="stat-box">
+            <h3 class="stat-box__number">Fast</h3>
+            <p class="stat-box__label">Tối ưu tốc độ</p>
+            <span class="stat-box__sub">Tải trang cực nhanh < 2s</span>
           </div>
-          <div class="advantage__item" data-aos="fade-left" data-aos-delay="600">
-            <i class="fas fa-check-circle"></i> <span>Hỗ trợ nhanh chóng</span>
-          </div>
-          <div class="advantage__item" data-aos="fade-left" data-aos-delay="700">
-            <i class="fas fa-check-circle"></i> <span>Tối ưu SEO cơ bản</span>
-          </div>
-          <div class="advantage__item" data-aos="fade-left" data-aos-delay="800">
-            <i class="fas fa-check-circle"></i> <span>Dễ mở rộng lâu dài</span>
+          <div class="stat-box">
+            <h3 class="stat-box__number">12/7</h3>
+            <p class="stat-box__label">Hỗ trợ nâng cấp</p>
+            <span class="stat-box__sub">Đồng hành cùng bạn lâu dài</span>
           </div>
         </div>
 
-        <!--* ----- cta ----- -->
-        <div class="advantage__cta" data-aos="zoom-in" data-aos-delay="1000">
-          <p>Bạn đã sẵn sàng để nâng tầm thương hiệu?</p>
-          <a href="#" class="btn-primary-gradient">Nhận tư vấn miễn phí</a>
+        <!--* ----- why-choose ----- -->
+        <div
+          class="advantage__why-choose"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          <h2 class="advantage__title">
+            <i class="fas fa-star"></i> Vì sao chọn VNmini?
+          </h2>
+          <!--* grid -->
+          <div class="advantage__list-grid">
+            <div
+              class="advantage__item"
+              data-aos="fade-left"
+              data-aos-delay="300"
+            >
+              <i class="fas fa-check-circle"></i>
+              <span>Code sạch dễ bảo trì</span>
+            </div>
+            <div
+              class="advantage__item"
+              data-aos="fade-left"
+              data-aos-delay="400"
+            >
+              <i class="fas fa-check-circle"></i>
+              <span>Giao diện hiện đại</span>
+            </div>
+            <div
+              class="advantage__item"
+              data-aos="fade-left"
+              data-aos-delay="500"
+            >
+              <i class="fas fa-check-circle"></i>
+              <span>Chạy mượt mọi thiết bị</span>
+            </div>
+            <div
+              class="advantage__item"
+              data-aos="fade-left"
+              data-aos-delay="600"
+            >
+              <i class="fas fa-check-circle"></i>
+              <span>Hỗ trợ nhanh chóng</span>
+            </div>
+            <div
+              class="advantage__item"
+              data-aos="fade-left"
+              data-aos-delay="700"
+            >
+              <i class="fas fa-check-circle"></i> <span>Tối ưu SEO cơ bản</span>
+            </div>
+            <div
+              class="advantage__item"
+              data-aos="fade-left"
+              data-aos-delay="800"
+            >
+              <i class="fas fa-check-circle"></i>
+              <span>Dễ mở rộng lâu dài</span>
+            </div>
+          </div>
+
+          <!--* ----- cta ----- -->
+          <div class="advantage__cta" data-aos="zoom-in" data-aos-delay="1000">
+            <p>Bạn đã sẵn sàng để nâng tầm thương hiệu?</p>
+            <a href="#" class="btn-primary-gradient">Nhận tư vấn miễn phí</a>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!--* ===== divider ===== -->
-  <hr class="hr-divider">
+    <!--* ===== divider ===== -->
+    <hr class="hr-divider" />
 
-  <!--* ----- ----- ----- pricing ----- ----- ----- -->
-  <section id="pricing-section" class="pricing-section">
-    <!--* ----- ----- container ----- ----- -->
-    <div class="pricing__container">
-      <h2 class="pricing__title" data-aos="fade-up">Bảng giá tham khảo</h2>
-      <!--* ----- grid ----- -->
-      <div class="pricing__grid">
-        <!--* item 1 -->
-        <div class="pricing__card" data-aos="zoom-in" data-aos-delay="100">
-          <h3 class="pricing__name">Landing Page</h3>
-          <div class="pricing__divider"></div>
-          <p class="pricing__price">Từ <span>1.000.000đ</span></p>
-          <ul class="pricing__features">
-            <li><i class="fas fa-check"></i> Tối ưu chuyển đổi</li>
-            <li><i class="fas fa-check"></i> Responsive</li>
-          </ul>
-        </div>
-        <!--* item 2 -->
-        <div class="pricing__card" data-aos="zoom-in" data-aos-delay="200">
-          <h3 class="pricing__name">Tool Web</h3>
-          <div class="pricing__divider"></div>
-          <p class="pricing__price">Từ <span>600.000đ</span></p>
-          <ul class="pricing__features">
-            <li><i class="fas fa-check"></i> Xử lý logic nhanh</li>
-            <li><i class="fas fa-check"></i> Dễ dàng sử dụng</li>
-          </ul>
-        </div>
-        <!--* item 3 -->
-        <div class="pricing__card" data-aos="zoom-in" data-aos-delay="300">
-          <h3 class="pricing__name">Mini Game</h3>
-          <div class="pricing__divider"></div>
-          <p class="pricing__price">Từ <span>1.500.000đ</span></p>
-          <ul class="pricing__features">
-            <li><i class="fas fa-check"></i> Hiệu ứng mượt mà</li>
-            <li><i class="fas fa-check"></i> HTML5/Canvas</li>
-          </ul>
-        </div>
-        <!--* item 4 -->
-        <div class="pricing__card" data-aos="zoom-in" data-aos-delay="400">
-          <h3 class="pricing__name">Source Code</h3>
-          <div class="pricing__divider"></div>
-          <p class="pricing__price">Từ <span>200.000đ</span></p>
-          <ul class="pricing__features">
-            <li><i class="fas fa-check"></i> Code gọn gàng</li>
-            <li><i class="fas fa-check"></i> Hướng dẫn cài đặt</li>
-          </ul>
-        </div>
-        <!--* item 5 -->
-        <div class="pricing__card" data-aos="zoom-in" data-aos-delay="500">
-          <h3 class="pricing__name">Fix Bug & Tối ưu</h3>
-          <div class="pricing__divider"></div>
-          <p class="pricing__price">Từ <span>200.000đ</span></p>
-          <ul class="pricing__features">
-            <li><i class="fas fa-check"></i> Sửa lỗi CSS/JS</li>
-            <li><i class="fas fa-check"></i> Tăng tốc độ load</li>
-          </ul>
-        </div>
-        <!--* item 6 -->
-        <div class="pricing__card" data-aos="zoom-in" data-aos-delay="600">
-          <h3 class="pricing__name">Nâng cấp Web</h3>
-          <div class="pricing__divider"></div>
-          <p class="pricing__price">Từ <span>300.000đ</span></p>
-          <ul class="pricing__features">
-            <li><i class="fas fa-check"></i> Thêm tính năng mới</li>
-            <li><i class="fas fa-check"></i> Làm mới giao diện</li>
-          </ul>
+    <!--* ----- ----- ----- pricing ----- ----- ----- -->
+    <section id="pricing-section" class="pricing-section">
+      <!--* ----- ----- container ----- ----- -->
+      <div class="pricing__container">
+        <h2 class="pricing__title" data-aos="fade-up">Bảng giá tham khảo</h2>
+        <!--* ----- grid ----- -->
+        <div class="pricing__grid">
+          <!--* item 1 -->
+          <div class="pricing__card" data-aos="zoom-in" data-aos-delay="100">
+            <h3 class="pricing__name">Landing Page</h3>
+            <div class="pricing__divider"></div>
+            <p class="pricing__price">Từ <span>1.000.000đ</span></p>
+            <ul class="pricing__features">
+              <li><i class="fas fa-check"></i> Tối ưu chuyển đổi</li>
+              <li><i class="fas fa-check"></i> Responsive</li>
+            </ul>
+          </div>
+          <!--* item 2 -->
+          <div class="pricing__card" data-aos="zoom-in" data-aos-delay="200">
+            <h3 class="pricing__name">Tool Web</h3>
+            <div class="pricing__divider"></div>
+            <p class="pricing__price">Từ <span>600.000đ</span></p>
+            <ul class="pricing__features">
+              <li><i class="fas fa-check"></i> Xử lý logic nhanh</li>
+              <li><i class="fas fa-check"></i> Dễ dàng sử dụng</li>
+            </ul>
+          </div>
+          <!--* item 3 -->
+          <div class="pricing__card" data-aos="zoom-in" data-aos-delay="300">
+            <h3 class="pricing__name">Mini Game</h3>
+            <div class="pricing__divider"></div>
+            <p class="pricing__price">Từ <span>1.500.000đ</span></p>
+            <ul class="pricing__features">
+              <li><i class="fas fa-check"></i> Hiệu ứng mượt mà</li>
+              <li><i class="fas fa-check"></i> HTML5/Canvas</li>
+            </ul>
+          </div>
+          <!--* item 4 -->
+          <div class="pricing__card" data-aos="zoom-in" data-aos-delay="400">
+            <h3 class="pricing__name">Source Code</h3>
+            <div class="pricing__divider"></div>
+            <p class="pricing__price">Từ <span>200.000đ</span></p>
+            <ul class="pricing__features">
+              <li><i class="fas fa-check"></i> Code gọn gàng</li>
+              <li><i class="fas fa-check"></i> Hướng dẫn cài đặt</li>
+            </ul>
+          </div>
+          <!--* item 5 -->
+          <div class="pricing__card" data-aos="zoom-in" data-aos-delay="500">
+            <h3 class="pricing__name">Fix Bug & Tối ưu</h3>
+            <div class="pricing__divider"></div>
+            <p class="pricing__price">Từ <span>200.000đ</span></p>
+            <ul class="pricing__features">
+              <li><i class="fas fa-check"></i> Sửa lỗi CSS/JS</li>
+              <li><i class="fas fa-check"></i> Tăng tốc độ load</li>
+            </ul>
+          </div>
+          <!--* item 6 -->
+          <div class="pricing__card" data-aos="zoom-in" data-aos-delay="600">
+            <h3 class="pricing__name">Nâng cấp Web</h3>
+            <div class="pricing__divider"></div>
+            <p class="pricing__price">Từ <span>300.000đ</span></p>
+            <ul class="pricing__features">
+              <li><i class="fas fa-check"></i> Thêm tính năng mới</li>
+              <li><i class="fas fa-check"></i> Làm mới giao diện</li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!--* ===== divider ===== -->
-  <hr class="hr-divider">
+    <!--* ===== divider ===== -->
+    <hr class="hr-divider" />
 
-  <!--* ----- ----- ----- collab ----- ----- ----- -->
-  <section id="collab-section" class="collab-section">
-    <!--* ----- ----- container ----- ----- -->
-    <div class="collab__container" data-aos="fade-up">
-      <div class="collab__content">
-        <div class="collab__badge">
-          <span class="dot"></span> Đang tìm cơ hội hợp tác
-        </div>
-        <h2 class="collab__title">Sẵn sàng cho những thử thách mới</h2>
-        <p class="collab__desc">VNmini sẵn sàng freelance, cộng tác dự án hoặc tham gia vị trí <strong>Front-end Developer</strong>.</p>
-        <a href="mailto:contact@vnmini.com" class="btn-primary-gradient">Gửi lời mời ngay</a>
-      </div>
-    </div>
-  </section>
-
-  <!--* ----- ----- ----- footer ----- ----- ----- -->
-  <footer id="footer-section" class="footer-section">
-    <!--* ----- ----- container ----- ----- -->
-    <div class="footer__container" data-aos="fade-up">
-      
-      <div class="footer__top">
-        <a href="#" class="logo-gradient">VNmini</a>
-        <p class="footer__tagline">Kiến tạo sản phẩm số chuyên nghiệp & tối ưu.</p>
-        
-        <div class="footer__socials">
-          <a href="mailto:pnsong2707@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
-          <a href="https://github.com/VNGAMEMINI" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-          <a href="https://www.facebook.com/profile.php?id=61554146223655" target="_blank" title="Facebook" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
+    <!--* ----- ----- ----- collab ----- ----- ----- -->
+    <section id="collab-section" class="collab-section">
+      <!--* ----- ----- container ----- ----- -->
+      <div class="collab__container" data-aos="fade-up">
+        <div class="collab__content">
+          <div class="collab__badge">
+            <span class="dot"></span> Đang tìm cơ hội hợp tác
+          </div>
+          <h2 class="collab__title">Sẵn sàng cho những thử thách mới</h2>
+          <p class="collab__desc">
+            VNmini sẵn sàng freelance, cộng tác dự án hoặc tham gia vị trí
+            <strong>Front-end Developer</strong>.
+          </p>
+          <a href="mailto:contact@vnmini.com" class="btn-primary-gradient"
+            >Gửi lời mời ngay</a
+          >
         </div>
       </div>
+    </section>
 
-      <hr class="footer__divider">
+    <!--* ----- ----- ----- footer ----- ----- ----- -->
+    <footer id="footer-section" class="footer-section">
+      <!--* ----- ----- container ----- ----- -->
+      <div class="footer__container" data-aos="fade-up">
+        <div class="footer__top">
+          <a href="#" class="logo-gradient">VNmini</a>
+          <p class="footer__tagline">
+            Kiến tạo sản phẩm số chuyên nghiệp & tối ưu.
+          </p>
 
-      <div class="footer__bottom">
-        <div class="footer__copyright">
-          © 2026 <span>VNmini</span> • Web Creator • Product Developer
+          <div class="footer__socials">
+            <a href="mailto:pnsong2707@gmail.com" title="Email"
+              ><i class="fas fa-envelope"></i
+            ></a>
+            <a
+              href="https://github.com/VNGAMEMINI"
+              target="_blank"
+              title="GitHub"
+              ><i class="fab fa-github"></i
+            ></a>
+            <a
+              href="https://www.facebook.com/profile.php?id=61554146223655"
+              target="_blank"
+              title="Facebook"
+              rel="noopener noreferrer"
+              ><i class="fab fa-facebook"></i
+            ></a>
+          </div>
         </div>
-        <div class="footer__policy">
-          <a href="#">Chính sách bảo mật</a>
-          <a href="#">Điều khoản sử dụng</a>
+
+        <hr class="footer__divider" />
+
+        <div class="footer__bottom">
+          <div class="footer__copyright">
+            © 2026 <span>VNmini</span> • Web Creator • Product Developer
+          </div>
+          <div class="footer__policy">
+            <a href="#">Chính sách bảo mật</a>
+            <a href="#">Điều khoản sử dụng</a>
+          </div>
         </div>
       </div>
-    </div>
-  </footer>
+    </footer>
 
-<!-- script Thư viện -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-<script>
-  AOS.init();
-</script>
-<!-- script SEO.js -->
-<script src="../JS/SEO.js"></script>
-</body>
+    <!-- script Thư viện -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <script>
+      AOS.init();
+    </script>
+    <!-- script SEO.js -->
+    <script src="../JS/SEO.js"></script>
+  </body>
 </html>
